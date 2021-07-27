@@ -5,7 +5,9 @@ MEDIAWIKI DEPLOYMENT ON K8S CLUSTER
  
  
 # git clone -b master https://github.com/dockerkube/mediawiki.git
+
 Cloning into 'mediawiki'...
+
 remote: Enumerating objects: 15, done.
 remote: Counting objects: 100% (15/15), done.
 remote: Compressing objects: 100% (10/10), done.
