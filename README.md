@@ -31,6 +31,10 @@ Chart.yaml  README.md  templates
 
 db-deployment.yaml  db-service.yaml  env-configmap.yaml  mediawiki-deployment.yaml  mediawiki-service.yaml  secret.yaml
 
+# Create a namespace
+
+kubectl create ns k8s
+
 # helm install mediawiki -n k8s ./mediawiki-chart
 
 [opc@brm-dev-06 mediawiki]$ helm install mediawiki -n k8s ./mediawiki-chart
