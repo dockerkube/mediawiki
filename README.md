@@ -84,7 +84,7 @@ mediawiki               k8s                     1               2021-07-27 02:39
 http://20.0.2.38/
  
 
-Delete Helm chart:
+# Delete Helm chart:
 1.	[opc@brm-dev-06 mediawiki-chart]$ helm list -n k8s
 NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
 mediawiki       k8s             1               2021-07-27 02:39:50.188668868 -0700 PDT deployed        mediawiki-chart-0.0.1
