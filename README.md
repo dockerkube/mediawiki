@@ -86,31 +86,47 @@ http://20.0.2.38/
 
 # Delete Helm chart:
 1.	[opc@brm-dev-06 mediawiki-chart]$ helm list -n k8s
+ 
 NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+ 
 mediawiki       k8s             1               2021-07-27 02:39:50.188668868 -0700 PDT deployed        mediawiki-chart-0.0.1
+ 
 [opc@brm-dev-06 mediawiki-chart]$ ^C
+ 
 2.	[opc@brm-dev-06 mediawiki-chart]$ helm delete mediawiki -n k8s
+ 
 release "mediawiki" uninstalled
+ 
 [opc@brm-dev-06 mediawiki-chart]$
+ 
 [opc@brm-dev-06 mediawiki-chart]$ helm list -n k8s
+ 
 NAME    NAMESPACE       REVISION        UPDATED STATUS  CHART   APP VERSION
+ 
 [opc@brm-dev-06 mediawiki-chart]$
 
 3.	[opc@brm-dev-06 mediawiki-chart]$ kubectl get pods -n k8s
+ 
 NAME                         READY   STATUS        RESTARTS   AGE
+ 
 mediawiki-7576b79f8d-9b5l6   1/1     Terminating   0          12m
+ 
 [opc@brm-dev-06 mediawiki-chart]$
 4.	You can see mediawiki hosted in apache directory by doing exec in pod
 
-[opc@brm-dev-06 mediawiki]$ kubectl exec -it mediawiki-85ff968bf5-p4mdl /bin/bash
-Error from server (NotFound): pods "mediawiki-85ff968bf5-p4mdl" not found
 [opc@brm-dev-06 mediawiki]$ kubectl exec -it mediawiki-85ff968bf5-p4mdl -n k8s /bin/bash
+ 
 [root@mediawiki-85ff968bf5-p4mdl html]#
+ 
 [root@mediawiki-85ff968bf5-p4mdl html]# pwd
+ 
 /opt/rh/httpd24/root/var/www/html
+ 
 [root@mediawiki-85ff968bf5-p4mdl html]# ls
+ 
 mediawiki
 [root@mediawiki-85ff968bf5-p4mdl html]#
+ 
 [root@mediawiki-85ff968bf5-p4mdl html]#
 
 5.	[opc@brm-dev-06 mediawiki-chart]$ kubectl get pods -n k8s
