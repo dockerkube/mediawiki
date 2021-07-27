@@ -4,7 +4,9 @@ MEDIAWIKI DEPLOYMENT ON K8S CLUSTER
 [Document subtitle]
  
  
-# git clone -b master https://github.com/dockerkube/mediawiki.git
+# git clone
+
+git clone -b master https://github.com/dockerkube/mediawiki.git
 
 Cloning into 'mediawiki'...
 
