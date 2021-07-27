@@ -29,7 +29,7 @@ spec:
             secretKeyRef:
               name: db-secret
               key: MYSQL_ROOT_PASSWORD
-        image: supreetraut/mariadb-wiki
+        image: priyanka1684/mariadb-wiki
         imagePullPolicy: Always
         name: db
         ports:
