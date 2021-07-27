@@ -78,7 +78,7 @@ mediawiki   LoadBalancer   10.96.111.252   20.0.2.38     80:31955/TCP,443:31239/
 # helm ls -A
 NAME                    NAMESPACE               REVISION        UPDATED                                 STATUS          CHART                           APP VERSION
 mediawiki               k8s                     1               2021-07-27 02:39:50.188668868 -0700 PDT deployed        mediawiki-chart-0.0.1                
-7.	[opc@brm-dev-06 mediawiki-chart]$
+
 
 # Acess the service using External IP and port which is get assigned to service after creating the service 
 http://20.0.2.38/
