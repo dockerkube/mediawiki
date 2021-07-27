@@ -4,7 +4,7 @@ MEDIAWIKI DEPLOYMENT ON K8S CLUSTER
 [Document subtitle]
  
  
-1.	[opc@brm-dev-06 test]$ git clone -b master https://github.com/dockerkube/mediawiki.git
+# git clone -b master https://github.com/dockerkube/mediawiki.git
 Cloning into 'mediawiki'...
 remote: Enumerating objects: 15, done.
 remote: Counting objects: 100% (15/15), done.
@@ -23,7 +23,7 @@ Chart.yaml  README.md  templates
 [opc@brm-dev-06 templates]$ ls
 db-deployment.yaml  db-service.yaml  env-configmap.yaml  mediawiki-deployment.yaml  mediawiki-service.yaml  secret.yaml
 
-2.	helm install mediawiki -n k8s ./mediawiki-chart
+# helm install mediawiki -n k8s ./mediawiki-chart
 [opc@brm-dev-06 mediawiki]$ helm install mediawiki -n k8s ./mediawiki-chart
 NAME: mediawiki
 LAST DEPLOYED: Tue Jul 27 02:19:42 2021
@@ -33,12 +33,12 @@ REVISION: 1
 TEST SUITE: None
 
 
-3.	[opc@brm-dev-06 mediawiki]$ kubectl get pods -n k8s
+# kubectl get pods -n k8s
 NAME                         READY   STATUS    RESTARTS   AGE
 db-b5ff95b5-9lxgt            1/1     Running   0          10s
 mediawiki-7576b79f8d-x2wq2   1/1     Running   0          10s
 
-4.	[opc@brm-dev-06 mediawiki]$ kubectl describe svc mediawiki -n k8s
+# kubectl describe svc mediawiki -n k8s
 Name:                     mediawiki
 Namespace:                k8s
 Labels:                   app.kubernetes.io/managed-by=Helm
@@ -69,18 +69,18 @@ Events:
   Normal  EnsuredLoadBalancer   5s    service-controller  Ensured load balancer
 
 
-5.	[opc@brm-dev-06 mediawiki-chart]$ kubectl get svc -n k8s
+# kubectl get svc -n k8s
 NAME        TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
 db          ClusterIP      10.96.64.136    <none>        33060/TCP                    3m45s
 mediawiki   LoadBalancer   10.96.111.252   20.0.2.38     80:31955/TCP,443:31239/TCP   3m45s
 [opc@brm-dev-06 mediawiki-chart]$
 
-6.	[opc@brm-dev-06 mediawiki-chart]$ helm ls -A
+# helm ls -A
 NAME                    NAMESPACE               REVISION        UPDATED                                 STATUS          CHART                           APP VERSION
 mediawiki               k8s                     1               2021-07-27 02:39:50.188668868 -0700 PDT deployed        mediawiki-chart-0.0.1                
 7.	[opc@brm-dev-06 mediawiki-chart]$
 
-8.	Acess the service using External IP and port which is get assigned to service after creating the service 
+# Acess the service using External IP and port which is get assigned to service after creating the service 
 http://20.0.2.38/
  
 
