@@ -114,7 +114,8 @@ mediawiki
 [root@mediawiki-85ff968bf5-p4mdl html]#
 
 5.	[opc@brm-dev-06 mediawiki-chart]$ kubectl get pods -n k8s
-No resources found.
+ 
+  No resources found.
 
  
 
