@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: k8s
+    meta.helm.sh/release-namespace: k8s
+    service.beta.kubernetes.io/oci-load-balancer-internal: "true"
+    service.beta.kubernetes.io/oci-load-balancer-subnet1: ocid1.subnet.oc1.uk-london-1.aaaaaaaasfbocitfk42cad7iybyxejmtkjlavdu4zowbimdaqajvtjdu7utq
+  labels:
+    service: mediawiki
+  name: mediawiki
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  - name: https
+    port: 443
+    targetPort: 80
+  selector:
+    service: mediawiki
